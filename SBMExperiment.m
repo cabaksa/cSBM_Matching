@@ -4,8 +4,8 @@ addpath("construct_graph")
 addpath("second_step")
 addpath("baseline")
 
-total_task = 1;
-total_cor = 4;
+total_task = 20;
+total_cor = 11;
 
 % m : community size
 % k : the number of community 
@@ -17,8 +17,8 @@ total_cor = 4;
 % k1 : the number of communities which used
 % in signature vector
 
-m = 500;
-k = 3;
+m = 833;
+k = 6;
 n = m*k;
 c = 1;
 p = 0.025;
@@ -26,7 +26,7 @@ q = p/3;
 perm = randperm(n);
 GM = [(1:n)' (perm)'];
 Ground_Truth = full(sparse(GM(:, 1), GM(:, 2), 1, n, n));
-T = 8;
+T = 5;
 l = 2;
 k1 = setdiff((1:k),[c 2]);
 sV = (1:2^(size(k1,2)*l));
