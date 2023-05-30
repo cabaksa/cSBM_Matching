@@ -14,8 +14,7 @@ total_cor = 11;
 % c : comparing community
 % l : length of tree
 % sV : signature vector
-% k1 : the number of communities which used
-% in signature vector
+% k1 : the number of communities which used in signature vector
 
 m = 833;
 k = 6;
