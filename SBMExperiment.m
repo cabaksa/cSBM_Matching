@@ -64,7 +64,7 @@ for t = 1:total_task
         
         Adj_MP_sig = M2adj(MP_Sig);
         P_sig = second_step(Adj_MP_sig,A,B,c,com,pcom,T);
-        Sec_Our(t,alp) = size(find((P_sig(:,2)-perm(P_sig(:,1)))==0),1)/n;
+        Sec_Our(t,alp) = size(find((P_sig(:,2)-perm(P_sig(:,1))')==0),1)/n;
 %% DP 1
         Sim_ADP = matching_deg_pro(A,B);
         Sim_DP1 = Sim_ADP(com{c},pcom{c});
@@ -73,7 +73,7 @@ for t = 1:total_task
         
         Adj_MDP1 = M2adj(MP_DP1);
         P_DP1 = second_step(Adj_MDP1,A,B,c,com,pcom,T);
-        Sec_DP1(t,alp) = size(find((P_DP1(:,2)-perm(P_DP1(:,1)))==0),1)/n;
+        Sec_DP1(t,alp) = size(find((P_DP1(:,2)-perm(P_DP1(:,1))')==0),1)/n;
 %% DP 2
         Fir_DP2_P = zeros(1,k);
         Acc_SecDP_c = zeros(1,k);
@@ -99,7 +99,7 @@ for t = 1:total_task
         Adj_MGP1 = M2adj(MP_GP1);
         Fir_GP1(t,alp) = get_acc(MP_GP1,perm,com,pcom,c);
         P_GP1 = second_step(Adj_MGP1,A,B,c,com,pcom,T);
-        Sec_GP1(t,alp) = size(find((P_GP1(:,2)-perm(P_GP1(:,1)))==0),1)/n;  
+        Sec_GP1(t,alp) = size(find((P_GP1(:,2)-perm(P_GP1(:,1))')==0),1)/n;  
         
 %% GP 2
         Fir_GP2_P = zeros(1,k);
